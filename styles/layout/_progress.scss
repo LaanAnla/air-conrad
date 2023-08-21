@@ -1,0 +1,9 @@
+.progress {
+  border-top: 6px dotted $base-color-purple;
+  height: 6px;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 0;
+  z-index: z('navigation');
+}

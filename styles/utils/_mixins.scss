@@ -1,0 +1,39 @@
+%cover {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+%column-center {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+%row-center {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+%h1 {
+  color: $base-color-white;
+  font-family: $font-pixeloid-bold;
+  font-size: $font-size-h1;
+}
+
+%h2 {
+  color: $base-color-white;
+  font-family: $font-pixeloid-bold;
+  font-size: $font-size-h2;
+}
+
+%p {
+  color: $base-color-white;
+  font-family: $font-pixeloid-mono;
+  font-size: $font-size-p;
+}

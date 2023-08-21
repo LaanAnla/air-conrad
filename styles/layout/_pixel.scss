@@ -1,0 +1,15 @@
+.scroll__index {
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  z-index: z('navigation');
+}
+
+.scroll__index__text {
+  @extend %p;
+  text-transform: uppercase;
+
+  @media screen and (orientation: landscape) {
+    
+  }
+}

@@ -1,0 +1,85 @@
+.navigation__wrapper {
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.121);
+  display: flex;
+  height: 15vh;
+  justify-content: space-around;
+  left: 0;
+  position: fixed;
+  top: 50px;
+  width: 100vw;
+  z-index: z('navigation');
+}
+
+.navigation__item {
+  flex: 1;
+}
+
+.navigation__logo {
+  text-align: left;
+}
+
+.navigation__logo img {
+  height: auto;
+  margin-left: 2.5rem;
+  width: calc(130px + (300 - 130) * (100vw - 350px) / (1920 - 350));
+
+  @include media('<tablet') {
+    margin-left: 0.5rem;
+  }
+}
+
+.navigation__text {
+  @extend %p;
+  text-align: center;
+  text-transform: uppercase;
+
+  @include media('<tablet') {
+    display: none;
+  }
+}
+
+.navigation__link__wrapper {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.navigation__link {
+  @extend %p;
+  display: inline-block;
+  margin-right: 2.5rem;
+  overflow: hidden;
+  padding-bottom: 2px;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  @include media('<phone') {
+    margin-right: 0.5rem;
+  }
+}
+
+.navigation__link:after {
+  border-bottom: 3px dotted $base-color-white;
+  bottom: 0;
+  content: '';
+  display: block;
+  position: absolute;
+  transform: translateX(-101%);
+  width: 100%;
+
+  @include media('<tablet') {
+    display: none;
+  }
+}
+
+.navigation__link:hover:after {
+  transition: transform 0.3s;
+  transform: translateX(0);
+}
+
+.animate-out:after {
+  transition: transform 0.3s;
+  transform: translateX(100%);
+}

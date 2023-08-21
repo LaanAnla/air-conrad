@@ -1,0 +1,128 @@
+extend ../partials/layout.pug
+
+block variables
+  - var template = 'home'
+
+block content
+  .home#smooth-wrapper
+    .home__wrapper#smooth-content
+      section.home__banner(data-client="WELCOME" data-color="yellow")
+        .home__banner__wrapper
+          h1.home__banner__title 
+            | Discover our Flashback collection and
+            br
+            a.blue-text-link#win-console
+              span.blue-text Win a PS5
+          .home__banner__scroll--down
+            p.home__banner__scroll--down--text scroll down 
+            img.home__banner__scroll--down--img(src='images/arrow-down.svg' alt="image indicating the direction of scrolling")
+      section.home__collection(data-client="COLLECTION" data-color="green")
+        img.pixel(src="images/pixels.svg" data-speed="1.6" alt="Logo used for the parallax effect with pixels")
+        .home__collection__introduction
+          h2.home__collection__title__introduction(data-animation="title" data-speed="clamp(1.1)") Discover the collection
+          h2.home__collection__title__introduction(data-animation="title" data-speed="clamp(1.1)") Limited edition
+          h2.home__collection__title__introduction.preorder(data-animation="title" data-speed="clamp(1.1)") Pre-order until September 30th
+        .home__collection__image-container
+          if isDesktop
+            figure(data-speed="clamp(1.1)")
+              a(href="https://athletesonthemat.com" target="_blank" rel="noopener noreferrer")
+                img.preloaded(data-animation="photos" data-src="images/rashguard-air-conrad-face.webp" alt="Photo of the Air Conrad grappling rashguard")
+              p(data-animation="paragraph") Grappling Rashguard - Air conrad
+              p.green-text(data-animation="paragraph") Price: 50€
+          else
+            figure
+              a(href="https://athletesonthemat.com" target="_blank" rel="noopener noreferrer")
+                img.preloaded(data-animation="photos" data-src="images/rashguard-air-conrad-face.webp" alt="Photo of the Air Conrad grappling rashguard")
+              p(data-animation="paragraph") Grappling Rashguard - Air Conrad 
+              p.green-text(data-animation="paragraph") Price: 50€
+
+          if isDesktop
+            figure(data-speed="clamp(1.2)")
+              a(href="https://athletesonthemat.com" target="_blank" rel="noopener noreferrer")
+                img.preloaded(data-animation="photos" data-src="images/short-air-conrad.webp" alt="Photo of the Air Conrad grappling short")
+              p(data-animation="paragraph") Grappling Short - Air Conrad 
+              p.green-text(data-animation="paragraph") Price: 50€
+          else
+            figure
+              a(href="https://athletesonthemat.com" target="_blank" rel="noopener noreferrer")
+                img.preloaded(data-animation="photos" data-src="images/short-air-conrad.webp" alt="Photo of the Air Conrad grappling short")
+              p(data-animation="paragraph") Grappling Short - Air Conrad 
+              p.green-text(data-animation="paragraph") Price: 50€
+        .home__collection__image-container
+          if isDesktop
+            figure(data-speed="clamp(1.05)")
+              a(href="https://athletesonthemat.com" target="_blank" rel="noopener noreferrer")
+                img.preloaded(data-animation="photos" data-src="images/hoodie-air-conrad.webp" alt="Photo of the Air Conrad hoodie")
+              p(data-animation="paragraph") Hoodie - Air Conrad 
+              p.green-text(data-animation="paragraph") Price: 59€
+          else
+            figure
+              a(href="https://athletesonthemat.com" target="_blank" rel="noopener noreferrer")
+                img.preloaded(data-animation="photos" data-src="images/hoodie-air-conrad.webp" alt="Photo of the Air Conrad hoodie")
+              p(data-animation="paragraph") Hoodie - Air conrad
+              p.green-text(data-animation="paragraph") Price: 59€
+
+          if isDesktop
+            figure(data-speed="clamp(1.2)")
+              a(href="https://athletesonthemat.com" target="_blank" rel="noopener noreferrer")
+                img.preloaded(data-animation="photos" data-src="images/t-shirt-air-conrad.webp" alt="Photo of the Air Conrad t-shirt")
+              p(data-animation="paragraph") T-Shirt - Air Conrad 
+              p.green-text(data-animation="paragraph") Price: 29€
+          else
+            figure
+              a(href="https://athletesonthemat.com" target="_blank" rel="noopener noreferrer")
+                img.preloaded(data-animation="photos" data-src="images/t-shirt-air-conrad.webp" alt="Photo of the Air Conrad t-shirt")
+              p(data-animation="paragraph") T-Shirt - Air Conrad 
+              p.green-text(data-animation="paragraph") Price: 29€
+        .home__collection__shop__wrapper
+          .home__collection__shop__button(data-animation="title") 
+            a(href="https://www.athletesonthemat.com", target="_blank" rel="noopener noreferrer")
+              button Shop them all !
+      section.grid-section(data-client="GALERIE" data-color="green")
+        .grid-layout
+          .column.column-1(data-speed="1.1")
+            .column-content
+              .grid-image
+                img.preloaded(data-src="images/t-shirt-air-conrad-face.webp", alt="Photo of the Air Conrad t-shirt worn by a man")
+              .grid-image
+                img.preloaded(data-src="images/t-shirt-air-conrad-climbing.webp", alt="Back view photo of the Air Conrad t-shirt worn by a man")
+              .grid-image
+                img.preloaded(data-src="images/t-shirt-air-conrad-face-2.webp", alt="Close-up of the Air Conrad t-shirt")
+          .column.column-2(data-speed="auto")
+            .column-content
+              .grid-image
+                img.preloaded(data-src="images/grappling-set-face.webp", alt="View of the Air Conrad grappling set")
+              .grid-image
+                img.preloaded(data-src="images/grappling-rashguard-face.webp", alt="Front view of the grappling rashguard")
+              .grid-image
+                img.preloaded(data-src="images/grappling-set-back.webp", alt="Back view of the grappling rashguard and shorts")
+          .column.column-3(data-speed="1.1")
+            .column-content
+              .grid-image
+                img.preloaded(data-src="images/hoodie-air-conrad-face.webp", alt="A man pulls up the hood of the Air Conrad hoodie")
+              .grid-image
+                img.preloaded(data-src="images/hoodie-air-conrad-face-2.webp", alt="View of the Air Conrad hoodie worn by a crouching man")
+              .grid-image
+                img.preloaded(data-src="images/hoodie-air-conrad-face-3.webp", alt="Full view photo of the Air Conrad hoodie")
+        .home__grid__gallerie--wrapper
+          .staggered_demo(data-animation="title")
+            h3#split-stagger More photos on our website...
+
+            
+      section.home__ps5(id="console" data-client="WIN A CONSOLE" data-color="blue")
+        img.pixel(data-src="images/pixels.svg" data-speed="1.6")
+        .home__ps5__title__introduction__wrapper(data-animation="title")
+          h2.home__ps5__title__introduction(data-animation="title" data-speed="1.1") enter the draw
+          h2.home__ps5__title__introduction(data-animation="title" data-speed="1.1") win a PS5
+      section.home__ps5__rules(data-client="WIN A CONSOLE" data-color="blue")
+        .home__ps5__rules__introduction--wrapper
+          h2.home__ps5__rules__introduction--title(data-animation="title") Follow these steps 
+          h2.home__ps5__rules__introduction--title(data-animation="title") and try to win a PS5
+      section.home__genesis(data-client="GENESIS" data-color="aqua")
+        h1 Section 5
+      section.home__end(data-client="FLASHBACK 2" data-color="red")
+        figure.home__end__title__image
+          img.preloaded(data-src="images/logo-flashback-2.webp" data-animation="photoZoom")
+        .home__end__title__introduction__wrapper
+          p.home__end__title__introduction(data-animation="paragraph") In the 22nd century, the peace of the United Worlds extends throughout the Solar System — but this tranquility is threatened by the Morph invasion led by the fearsome General Lazarus.<br><br>In search of his lifelong friend, Ian, and with the help of his few allies — including A.I.S.H.A., his iconic AI-powered weapon — Conrad, once again, dives into a heart-pounding adventure full of twists, turns and revelations!<br><br>A gripping, fluid and intricate platform shooter, including exploration, puzzle solving and, of course, adventure! 
+      include ../partials/footer

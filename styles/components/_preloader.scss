@@ -1,0 +1,80 @@
+.preloader {
+  @extend %cover;
+  @extend %column-center;
+  align-items: center;
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top:0;
+  z-index: z('preloader');
+}
+
+.preloader__up--one {
+  background-color: $base-color-black;
+  height: 50vh;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform: translateY(100%);
+  width: 100vw;
+  z-index: z('preloader--one');
+}
+
+.preloader__down--one {
+  background-color: $base-color-black;
+  bottom:0;
+  height: 50vh;
+  left: 0;
+  position: absolute;
+  transform: translateY(-100%);
+  width: 100vw;
+  z-index: z('preloader--one');
+}
+
+.preloader__up--two {
+  background-color: $base-color-green;
+  height: 50vh;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform: translateY(100%);
+  width: 100vw;
+  z-index: z('preloader--two');
+}
+
+.preloader__down--two {
+  background-color: $base-color-green;
+  bottom:0;
+  height: 50vh;
+  left: 0;
+  position: absolute;
+  transform: translateY(-100%);
+  width: 100vw;
+  z-index: z('preloader--two');
+}
+
+.preloader__brands {
+  animation: fadeOut 2.2s $ease-fast forwards;
+  z-index: z('preloader');
+}
+
+.preloader__brands--figure {
+  height: auto;
+  width: 300px;
+  z-index: z('preloader');
+}
+
+.preloader__brands--image {
+  height: 100%;
+  width: 100%;
+}
+
+.preloader__number {
+  bottom: 20px;
+  position: absolute;
+  z-index: z('preloader');
+}
+
+.preloader__number--text {
+ @extend %p;
+}
