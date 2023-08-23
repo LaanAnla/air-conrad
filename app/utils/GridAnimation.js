@@ -28,13 +28,13 @@ export default class GridAnimation {
         scale: 3
       }, "start")
       .from(".column-1 .grid-image", {
-        duration: 1,
+        duration: 1.2,
         autoAlpha: 0,
         xPercent: i => -((i + 1) * 40 + i * 100),
         yPercent: i => (i + 1) * 40 + i * 100,
       }, "start")
       .from(".column-3 .grid-image", {
-        duration: 1,
+        duration: 1.2,
         autoAlpha: 0,
         xPercent: i => (i + 1) * 40 + i * 100,
         yPercent: i => (i + 1) * 40 + i * 100

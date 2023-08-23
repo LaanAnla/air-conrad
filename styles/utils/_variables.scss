@@ -3,6 +3,7 @@ $base-color-blue:rgb(44, 117, 255);
 $base-color-green: rgb(10, 120, 6);
 $base-color-purple: rgb(100, 8, 92);
 $base-color-white:hsl(0, 0%, 100%);
+$base-color-brown: rgb(145, 97, 49);
 
 $font-pixeloid-bold: 'Pixeloid Bold';
 $font-pixeloid-mono: 'Pixeloid Mono';
@@ -10,9 +11,10 @@ $font-pixeloid-sans: 'Pixeloid Sans';
 
 $font-size-h1: clamp(2em, 4vw, 6em);
 $font-size-h2: calc(25px + (50 - 25) * ((100vw - 320px) / (1920 - 320)));
+$font-size-h4: calc(15px + (20 - 15) * (100vw - 350px) / (1920 - 350));
 $font-size-main-title: calc(35px + 105*(100vw - 320px)/1600);
-//$font-size-p: calc(0.004375 * 100vw + 16.6px);
 $font-size-p: calc(15px + (25 - 15) * (100vw - 350px) / (1920 - 350));
+$font-size-p-rules: calc(15px + (35 - 15) * (100vw - 350px) / (1920 - 350));
 
 $z-indexes: (
   'preloader',

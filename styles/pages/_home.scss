@@ -6,14 +6,22 @@
 }
 
 .home__banner__wrapper {
-  //visibility: hidden;
+  visibility: hidden;
+}
+
+.lines {
+  overflow: hidden;
 }
 
 .home__banner__title {
+  @extend %h1;
   font-size: calc(35px + (115 - 35) * ((100vw - 320px) / (1920 - 320)));
-  margin: auto;
-  text-transform: uppercase;
+  left: 50%;
+  position: absolute;
   text-align: center;
+  text-transform: uppercase;
+  top: 50%;
+  transform: translate(-50%,-50%);
   width: 80%;
   
   @media screen and (max-width: 850px) and (orientation: landscape) {
@@ -30,17 +38,7 @@
 }
 
 .home__banner__scroll--down {
-  animation: fade-out 1s $ease-slow 3s forwards;
-  opacity: 0;
-
-  @keyframes fade-out {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
+  visibility: hidden;
 }
 
 .home__banner__scroll--down--text {
@@ -68,7 +66,7 @@
 
 .home__collection {
   @extend %column-center;
-  background-color: $base-color-black;
+  //background-color: $base-color-black;
   min-height: 100vh;
   position: relative;
   width: 100vw;
@@ -176,8 +174,8 @@ p.green-text {
 
 .home__collection__shop__button button {
   @extend %h2;
-  background-color: #980d40;
-  box-shadow: #980d40;
+  background-color: $base-color-purple;
+  box-shadow: $base-color-purple;
   height: 100%;
   margin-bottom: 60px;
   text-transform: uppercase;
@@ -256,7 +254,6 @@ p.green-text {
 
 .staggered_demo h3 {
   @extend %h2;
-  letter-spacing: 0.03em;
   text-align: center;
 }
 
@@ -275,15 +272,8 @@ p.green-text {
 }
 
 
-
-
-/////////////////
-// PS5 section //
-/////////////////
-
-.home__ps5 {
+.home__ps5 { /* Section with PS5 */
   @extend %column-center;
-  //background-color: $base-color-green;
   height: 100vh;
   position: relative;
   width: 100vw;
@@ -299,15 +289,11 @@ p.green-text {
   visibility: inherit;
 }
 
-///////////////
-// PS5 rules //
-///////////////
-
 .home__ps5__rules {
   @extend %column-center;
-  background-color: $base-color-blue;
-  height: 100vh;
+  height: 100%;
   width: 100vw;
+  position: relative;
 }
 
 .home__ps5__rules__introduction--wrapper {
@@ -320,29 +306,200 @@ p.green-text {
   text-transform: uppercase;
 }
 
-.home__genesis {
-  background-color: $base-color-green;
-  height: 100vh;
-  width: 100vw;
-  @extend %row-center;
+.home__ps5__rules--items--wrapper {
+  @extend %p-rules;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 50px;
+  margin-top: 100px;
+
+  @include media('<tablet') {
+    margin-top: 50px;
+    width: 100vw;
+  }
 }
 
-.home__end {
+.home__ps5__rules--item {
+  @include media('<tablet') {
+    margin: auto;
+    text-align: center;
+    width: 90%;
+  }
+}
+
+.home__ps5__rules--item a {
+  color: $base-color-purple;
+  text-decoration: none;
+}
+
+.home__ps5__rules--item a:hover {
+  color: $base-color-green;
+  text-decoration: none;
+}
+
+.item--brown {
+  animation: couleurChangeante 2s linear infinite;
+}
+
+.video__teaser__wrapper {
+  height: 90vh; /* 90% of the viewport height */
+  margin: 0 auto; /* center the wrapper if needed */
+  overflow: hidden;
+  position: relative;
+  width: calc(16/9 * 90vh); /* based on 16:9 ratio */
+
+  @include media('<desktop') {
+    height: calc(9/16 * 100vw); // Note: Changed to 100vw here to maintain 16:9 ratio based on width.
+    width: 95%; 
+    margin-bottom: 30px;
+  }
+}
+
+.video__teaser__wrapper iframe {
   height: 100%;
-  margin-bottom: 100px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+
+.home__genesis {
+  @extend %row-center;
+  height: 100%;
+  margin-top: 50px;
+  position: relative;
   width: 100vw;
+}
+
+.home__genesis__gallery {
+  display:flex;
+  position: relative;
+}
+
+.home__genesis__gallery--left {
+	width:50%;
+
+  @include media('<tablet') {
+    display: none;
+  }
+}
+
+.home__genesis__gallery--desktop__content {
+  margin:auto;
+	width:80%;
+}
+
+.home__genesis__gallery--desktop--content--section {
+  align-items: flex-start;
+	display:flex;
+	flex-direction:column;
+	height:100vh;
+	justify-content:center;
+}
+
+.home__genesis__gallery--desktop--content--section h2 {
+  @extend %h2;
+  padding: 30px;
+}
+
+.home__genesis__gallery--desktop--content--section p {
+  @extend %h4;
+  padding: 30px;
+}
+
+.home__genesis__gallery--right {
   @extend %column-center;
+	height:100vh;
+	width:50%;
+
+  @include media('<tablet') {
+    align-items: center;
+    height: auto;
+    width: 100%;
+  }
+}
+
+.home__genesis__gallery--desktop--photos {
+	border-radius:20px;
+	box-shadow:4px 4px 4px rgba(0, 0, 0, 0.4);
+	height:400px;
+	overflow:hidden;
+	position:relative;
+  width: 400px;
+
+  @include media('<tablet') {
+    display: none;
+  }
+}
+
+.home__genesis__gallery--desktop--photo {
+  height:100%;
+  position:absolute;
+  width:100%;
+}
+
+.home__genesis__gallery--mobile--content {
+  display: none;
+
+  @include media('<tablet') {
+    display: block;
+    text-align: center;
+    width: 90vw;
+  }
+}
+
+.home__genesis__gallery--mobile--content p {
+  @extend %p;
+}
+
+.home__genesis__gallery--mobile--content h2 {
+  @extend %h2;
+}
+
+.home__genesis__gallery--mobile--photo {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  height: auto;
+  margin-bottom: 100px;
+  width: 90vw;
+}
+
+.home__genesis__gallery--mobile--photo img {
+  border-radius: 6vw;
+  height: 90%;
+  width: 90%;
+}
+
+
+//////////////////////////
+
+.home__end {
+  @extend %column-center;
+  height: 100%;
   justify-content: space-between;
+  margin-bottom: 100px;
+  margin-top: 100px;
+  position: relative;
+  width: 100vw;
+
+  @include media('<tablet') {
+    margin-top: 0;
+  }
 }
 
 .home__end__title__image img {
-  width: 80vw;
+  filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
   height: auto;
+  width: 80vw;
 }
 
 .home__end__title__introduction__wrapper {
-  width: 70vw;
   height: 100%;
+  width: 70vw;
 
   @include media('<tablet') {
     width: 90vw;
@@ -356,8 +513,4 @@ p.green-text {
   @include media('<tablet') {
     margin-top: 50px;
   }
-}
-
-h1 {
-  @extend %h1;
 }

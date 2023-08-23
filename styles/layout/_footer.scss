@@ -1,19 +1,16 @@
 .footer {
   @extend %column-center;
-  background-image: url('images/footer.svg');
-  height: 35vh;
+  height: 30vh;
   justify-content: space-between;
   position: relative;
   width: 100%;
 
   @include media('<tablet') {
-    background-repeat: no-repeat;
-    background-size: cover;
+    height: 100%;
+    justify-content: space-around;
   }
 
   @media screen and (max-width: 900px) and (orientation: landscape) {
-    background-repeat: repeat;
-    background-size: auto;
     height: 100%;
   }
 }
@@ -57,6 +54,9 @@
 }
 
 .footer__mentions__wrapper {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
   padding: 0 0 10px 0;
 
   @media screen and (max-width: 900px) and (orientation: landscape) {
@@ -65,9 +65,16 @@
   }
 }
 
+.footer__mentions__wrapper img {
+  height: auto;
+  width: 200px;
+  padding-bottom: 15px;
+  position: relative;
+}
+
 .footer__mentions {
-  @extend %p;
-  color: $base-color-black;
+  @extend %h4;
+  color: $base-color-white;
   text-align: center;
 
   @include media('<tablet') {

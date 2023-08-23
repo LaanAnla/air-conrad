@@ -9,52 +9,32 @@
   z-index: z('preloader');
 }
 
-.preloader__up--one {
-  background-color: $base-color-black;
-  height: 50vh;
-  left: 0;
+.preloader__wiper {
+	height:100vh;
   position: absolute;
+  right: 0;
   top: 0;
-  transform: translateY(100%);
   width: 100vw;
-  z-index: z('preloader--one');
+  z-index: z('preloader');
 }
 
-.preloader__down--one {
+.black {
   background-color: $base-color-black;
-  bottom:0;
-  height: 50vh;
-  left: 0;
-  position: absolute;
-  transform: translateY(-100%);
-  width: 100vw;
-  z-index: z('preloader--one');
 }
 
-.preloader__up--two {
-  background-color: $base-color-green;
-  height: 50vh;
-  left: 0;
-  position: absolute;
-  top: 0;
-  transform: translateY(100%);
-  width: 100vw;
-  z-index: z('preloader--two');
+.brown {
+  background-color: $base-color-brown;
 }
 
-.preloader__down--two {
-  background-color: $base-color-green;
-  bottom:0;
-  height: 50vh;
-  left: 0;
-  position: absolute;
-  transform: translateY(-100%);
-  width: 100vw;
-  z-index: z('preloader--two');
+.violet {
+  background-color: $base-color-purple;
+}
+
+.blue {
+  background-color: $base-color-blue;
 }
 
 .preloader__brands {
-  animation: fadeOut 2.2s $ease-fast forwards;
   z-index: z('preloader');
 }
 

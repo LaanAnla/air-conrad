@@ -1,12 +1,13 @@
-import Home from "./pages/home";
-import Preloader from "./components/Preloader";
-import Cursor from "./utils/Cursor";
-import NavigationLink from "./utils/NavigationLink";
-import ScrollIndex from "./utils/ScrollIndex";
-import GridAnimation from "./utils/GridAnimation";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
+import Cursor from "./utils/Cursor";
+import GridAnimation from "./utils/GridAnimation";
+import Home from "./pages/home";
+import NavigationLink from "./utils/NavigationLink";
+import Preloader from "./components/Preloader";
+import Split from "./animation/Banner";
+import ScrollIndex from "./utils/ScrollIndex";
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
@@ -14,12 +15,12 @@ class App {
   constructor() {
 
     this.scrollSmoother = ScrollSmoother.create({
-      smooth: 2,               // how long (in seconds) it takes to "catch up" to the native scroll position
       effects: true,           // looks for data-speed and data-lag attributes on elements
-      smoothTouch: 0.1, 
-      preventDefault: true,
-      normalizeScroll: true, 
       ignoreMobileResize: true,
+      normalizeScroll: true, 
+      preventDefault: true,
+      smooth: 2,               // how long (in seconds) it takes to "catch up" to the native scroll position
+      smoothTouch: 0.1, 
       });
       this.createPreloader();
       this.createContent();
@@ -32,27 +33,11 @@ class App {
     this.preloader.once('completed', this.onPreloaded.bind(this))
   }
 
-  createGrid() {
-    this.gridAnimation = new GridAnimation()
-  }
-
-  createCursor() {
-    this.cursor = new Cursor();
-  }
-
-  createPixels() {
-    this.scrollIndex = new ScrollIndex();
-  }
-
-  createNavigationLink() {
-    this.navigationLink = new NavigationLink()
-  }
-
   createContent() {
     this.content = document.querySelector('.content');
     this.template = this.content.getAttribute('data-template');
   }
-
+  
   createPages() {
     this.pages = {
       home: new Home()
@@ -65,10 +50,46 @@ class App {
     this.createNavigationLink();
     this.createPixels();
     this.createGrid();
+    this.createJump();
+  }
+
+  createCursor() {
+    this.cursor = new Cursor();
+  }
+
+  createGrid() {
+    this.gridAnimation = new GridAnimation()
+  }
+
+  createJump() {
+    document.querySelector("a#win-console").addEventListener("click", () => {
+      this.scrollSmoother.scrollTo(
+          "#console", 
+          true, 
+          "center center-=50px");
+      });
+  }
+
+  createNavigationLink() {
+    this.navigationLink = new NavigationLink()
+  }
+
+  createPixels() {
+    this.scrollIndex = new ScrollIndex();
+  }
+
+  createSplitTitle() {
+    this.splitTitle = new Split(
+      ".home__banner__title", 
+      ".home__banner__wrapper", 
+      ".home__banner__scroll--down",
+      ".cursor"
+    )
   }
 
   onPreloaded() {
     this.preloader.destroy()
+    this.createSplitTitle()
   }
 }
 

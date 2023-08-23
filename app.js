@@ -13,7 +13,6 @@ app.use((req, res, next) => {
   res.locals.isDesktop = parser.getDevice().type === undefined;
   res.locals.isPhone = parser.getDevice().type === 'mobile';
   res.locals.isTablet = parser.getDevice().type === 'tablet';
-  console.log(res.locals.isDesktop, res.locals.isPhone, res.locals.isTablet);
 
   next();
 });

@@ -6,9 +6,9 @@ block variables
 block content
   .home#smooth-wrapper
     .home__wrapper#smooth-content
-      section.home__banner(data-client="WELCOME" data-color="yellow")
+      section.home__banner(data-client="WELCOME" data-color="rgb(44, 117, 255)")
         .home__banner__wrapper
-          h1.home__banner__title 
+          h1.home__banner__title
             | Discover our Flashback collection and
             br
             a.blue-text-link#win-console
@@ -16,8 +16,8 @@ block content
           .home__banner__scroll--down
             p.home__banner__scroll--down--text scroll down 
             img.home__banner__scroll--down--img(src='images/arrow-down.svg' alt="image indicating the direction of scrolling")
-      section.home__collection(data-client="COLLECTION" data-color="green")
-        img.pixel(src="images/pixels.svg" data-speed="1.6" alt="Logo used for the parallax effect with pixels")
+      section.home__collection(data-client="COLLECTION" data-color="rgb(10, 120, 6)")
+        img.pixel.preloaded(data-src="images/pixels.svg" data-speed="1.6" alt="Logo used for the parallax effect with pixels")
         .home__collection__introduction
           h2.home__collection__title__introduction(data-animation="title" data-speed="clamp(1.1)") Discover the collection
           h2.home__collection__title__introduction(data-animation="title" data-speed="clamp(1.1)") Limited edition
@@ -78,7 +78,7 @@ block content
           .home__collection__shop__button(data-animation="title") 
             a(href="https://www.athletesonthemat.com", target="_blank" rel="noopener noreferrer")
               button Shop them all !
-      section.grid-section(data-client="GALERIE" data-color="green")
+      section.grid-section(data-client="GALERIE" data-color="hsl(0, 0%, 100%)")
         .grid-layout
           .column.column-1(data-speed="1.1")
             .column-content
@@ -106,23 +106,92 @@ block content
                 img.preloaded(data-src="images/hoodie-air-conrad-face-3.webp", alt="Full view photo of the Air Conrad hoodie")
         .home__grid__gallerie--wrapper
           .staggered_demo(data-animation="title")
-            h3#split-stagger More photos on our website...
-
-            
-      section.home__ps5(id="console" data-client="WIN A CONSOLE" data-color="blue")
-        img.pixel(data-src="images/pixels.svg" data-speed="1.6")
+            h3 More photos on our website...
+      section.home__ps5(id="console" data-client="WIN A CONSOLE" data-color="rgb(44, 117, 255)")
+        img.pixel.preloaded(data-src="images/pixels.svg" alt="Logo used for the parallax effect with pixels" data-speed="1.6")
         .home__ps5__title__introduction__wrapper(data-animation="title")
           h2.home__ps5__title__introduction(data-animation="title" data-speed="1.1") enter the draw
           h2.home__ps5__title__introduction(data-animation="title" data-speed="1.1") win a PS5
-      section.home__ps5__rules(data-client="WIN A CONSOLE" data-color="blue")
+      section.home__ps5__rules(data-client="WIN A CONSOLE" data-color="rgb(44, 117, 255)")
         .home__ps5__rules__introduction--wrapper
           h2.home__ps5__rules__introduction--title(data-animation="title") Follow these steps 
           h2.home__ps5__rules__introduction--title(data-animation="title") and try to win a PS5
-      section.home__genesis(data-client="GENESIS" data-color="aqua")
-        h1 Section 5
-      section.home__end(data-client="FLASHBACK 2" data-color="red")
+          .home__ps5__rules--items--wrapper
+            .home__ps5__rules--item
+              p(data-animation="title") 1: Buy 1 or more products ✅
+            .home__ps5__rules--item
+               p(data-animation="title") 2
+                | : Follow
+                | &nbsp;
+                a.step__text__link(href="https://www.instagram.com/athletesonthemat/", rel="noreferrer noopener", target="_blank")
+                  | athletesonthemat 
+                | &nbsp;
+                | and
+                | &nbsp;
+                a.step__text__link(href="https://www.instagram.com/microids_official/", rel="noreferrer noopener", target="_blank")
+                  | Microids 
+                | on Instagram ✅
+            .home__ps5__rules--item
+              p(data-animation="title") 3: Like and Tag 2 friends on the "air conrad" post on instagram  ✅
+            .home__ps5__rules--item
+              p.item--brown(data-animation="title") Winner will be drawn at random on 23 November 2023 on instagram ✅
+      section.home__genesis(data-client="GENESIS" data-color="rgb(100, 8, 92)")
+        img.pixel.preloaded(data-src="images/pixels.svg" alt="Logo used for the parallax effect with pixels" data-speed="2" )
+        .home__genesis__gallery
+          .home__genesis__gallery--left
+            .home__genesis__gallery--desktop--content
+              if isDesktop
+                .home__genesis__gallery--desktop--content--section.setfix
+                  h2 Flashback
+                  p In 1992, Flashback revolutionized action gaming and gained legendary status, ranking among the 100 best video games in history.<br><br>Today, Paul Cuisset, the creator of the original game, invites you to play again as Conrad B. Hart, the young agent of the GBI (Galactic Bureau of Investigation).
+              else if isPhone 
+                .home__genesis__gallery--desktop--content--section
+                    h2 Flashback
+                    p(data-animation="paragraph") In 1992, Flashback revolutionized action gaming and gained legendary status, ranking among the 100 best video games in history.<br><br>Today, Paul Cuisset, the creator of the original game, invites you to play again as Conrad B. Hart, the young agent of the GBI (Galactic Bureau of Investigation).
+              .home__genesis__gallery--desktop--content--section
+                h2 Microids  
+                p(data-animation="paragraph") Since 1985, our mission has been to provide rich and memorable experiences for the whole family.<br><br>In our own studios in France, as well as in collaboration with outstanding partners like Pendulo Studios and Eden Games, we create and distribute video games for PC, consoles and smartphones.
+              .home__genesis__gallery--desktop--content--section 
+                h2 Athletes on the mat 
+                p(data-animation="paragraph")  In 2013, Athletes On The Mat started their activities and became one of the major brands of many BJJ players and underground artists.<br><br>Athletes On The Mat (called ATHOM) grew to embody the BJJ culture and play an integral part in its constant regeneration. BJJ competitors, grapplers, MMA fans, surfers and skaters, all gravitated toward ATHOM.<br><br>ATHOM found its genesis from the mat, and established itself as a brand known for its quality, style, and authenticity.
+          .home__genesis__gallery--right
+            .home__genesis__gallery--mobile--content
+              .home__genesis__gallery--mobile--photo
+                figure
+                  img.preloaded(data-src="images/flashback-1992.webp" alt="Photo of an image from the 1992 game Flashback" data-animation="photos")
+                h2 Flashback
+                p(data-animation="paragraph") In 1992, Flashback revolutionized action gaming and gained legendary status, ranking among the 100 best video games in history.<br><br>Today, Paul Cuisset, the creator of the original game, invites you to play again as Conrad B. Hart, the young agent of the GBI (Galactic Bureau of Investigation).
+              .home__genesis__gallery--mobile--photo 
+                figure
+                  img.preloaded(data-src="images/microids-logo.webp" alt="Microis logo" data-animation="photos")
+                h2 Microids  
+                p(data-animation="paragraph") Since 1985, our mission has been to provide rich and memorable experiences for the whole family.<br><br>In our own studios in France, as well as in collaboration with outstanding partners like Pendulo Studios and Eden Games, we create and distribute video games for PC, consoles and smartphones.
+              .home__genesis__gallery--mobile--photo 
+                figure
+                  img.preloaded(data-src="images/logo-athom.webp" alt="Athletes on the mat logo" data-animation="photos")
+                h2 Athletes on the mat 
+                p(data-animation="paragraph")  In 2013, Athletes On The Mat started their activities and became one of the major brands of many BJJ players and underground artists.<br><br>Athletes On The Mat (called ATHOM) grew to embody the BJJ culture and play an integral part in its constant regeneration. BJJ competitors, grapplers, MMA fans, surfers and skaters, all gravitated toward ATHOM.<br><br>ATHOM found its genesis from the mat, and established itself as a brand known for its quality, style, and authenticity.
+            .home__genesis__gallery--desktop--photos
+              .home__genesis__gallery--desktop--photo
+                figure
+                  img.preloaded(data-src="images/flashback-1992.webp" alt="Photo of an image from the 1992 game Flashback")
+              .home__genesis__gallery--desktop--photo
+                figure
+                  img.preloaded(data-src="images/microids-logo.webp" alt="Microis logo")
+              .home__genesis__gallery--desktop--photo
+                figure
+                  img.preloaded(data-src="images/logo-athom.webp" alt="Athletes on the mat logo")
+      section.video__teaser__wrapper(data-client="")
+        iframe(
+          src="https://www.youtube.com/embed/K7XIkFb86zQ",
+          title="YouTube video player",
+          frameborder="0",
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share",
+          allowfullscreen
+        )
+      section.home__end(data-client="")
         figure.home__end__title__image
-          img.preloaded(data-src="images/logo-flashback-2.webp" data-animation="photoZoom")
+          img.preloaded(data-src="images/logo-flashback-2.webp" alt="logo of Microids and Athletes on the mat" data-animation="photoZoom")
         .home__end__title__introduction__wrapper
           p.home__end__title__introduction(data-animation="paragraph") In the 22nd century, the peace of the United Worlds extends throughout the Solar System — but this tranquility is threatened by the Morph invasion led by the fearsome General Lazarus.<br><br>In search of his lifelong friend, Ian, and with the help of his few allies — including A.I.S.H.A., his iconic AI-powered weapon — Conrad, once again, dives into a heart-pounding adventure full of twists, turns and revelations!<br><br>A gripping, fluid and intricate platform shooter, including exploration, puzzle solving and, of course, adventure! 
       include ../partials/footer

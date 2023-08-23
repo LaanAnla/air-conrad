@@ -11,6 +11,7 @@ export default class Page {
     this.selector = element;
     this.selectorChildren = { 
       ...elements, 
+      animationsBanner: '[data-animation="banner"]',
       animationsTitles: '[data-animation="title"]',
       animationsParagraph: '[data-animation="paragraph"]',
       animationsPhotos: '[data-animation="photos"]',
@@ -40,7 +41,6 @@ export default class Page {
 
   createAnimations() {
     this.animations = [];
-    console.log(this.animations)
 
     this.animationsTitles = map(this.elements.animationsTitles, element => {
       return new Title({
@@ -66,16 +66,15 @@ export default class Page {
     this.animations.push(...this.animationsPhotos);
 
     let elementsArray = Array.isArray(this.elements.animationsPhotoZoom) 
-      ? this.elements.animationsPhotoZoom : [this.elements.animationsPhotoZoom];
+                      ? this.elements.animationsPhotoZoom 
+                      : [this.elements.animationsPhotoZoom];
 
     this.animationsPhotoZoom = elementsArray.map(element => {
         return new PhotoZoom({
             element
         });
     });
-
     this.animations.push(...this.animationsPhotoZoom);
-
   }
 
   show() {

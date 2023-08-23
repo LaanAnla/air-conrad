@@ -34,6 +34,7 @@ export default class ScrollIndex {
 
   updateSectionIndex() {
     const sections = document.querySelectorAll('section');
+
     const clientTag = document.querySelector('.navigation__text p');
 
     sections.forEach(section => {

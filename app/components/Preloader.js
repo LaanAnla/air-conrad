@@ -11,12 +11,10 @@ export default class Preloader extends Component {
       element: ".preloader",
       elements: {
         logo: document.querySelectorAll(".preloader__brands, .preloader__number"),
-        wiperUpTwo: ".preloader__up--two",
-        wiperDownTwo: ".preloader__down--two",
-        wiperUpOne: ".preloader__up--one",
-        wiperDownOne: ".preloader__down--one",
+        wiper: document.querySelectorAll('.preloader__wiper'),
         number: ".preloader__number--text",
-        images: document.querySelectorAll("img.preloaded")
+        images: document.querySelectorAll("img.preloaded"),
+        body: document.querySelector('body'),
       }
     });
     this.length = 0;
@@ -24,6 +22,7 @@ export default class Preloader extends Component {
   }
 
   createLoader() {
+    this.elements.body.style.position = 'fixed' /* avoid scrolling during preloader */
       each(this.elements.images, element => {
         
         element.onload = _ => {
@@ -56,27 +55,21 @@ export default class Preloader extends Component {
         autoAlpha: 0,
         duration: 0.3,
       })
-      .to(this.elements.wiperUpOne, {
-        y: "200%",
-        duration: 0.7
-      }, ">")
-      .to(this.elements.wiperDownOne, {
-        y: "-200%",
-        duration: 0.7
-      }, "-=0.7")
-      .to(this.elements.wiperUpTwo, {
-        y: "200%",
-        duration: 0.8,
-      }, ">-0.5")
-      .to(this.elements.wiperDownTwo, {
-        y: "-200%",
-        duration: 0.8
-      }, "-=0.8");
+      .to(this.elements.wiper, {
+        yPercent:-100, 
+        ease:"power1.inOut", 
+        duration:0.8, 
+         stagger:{
+          each:0.15,
+          from:"end",
+          ease:"power1"
+        }
+      })
     });
   }
 
   destroy() {
     this.element.parentNode.removeChild(this.element);
-    ScrollTrigger.refresh();
+    ScrollTrigger.refresh(); /* refresh scrolltrigger after doinf position:fixed on preloader */
   }
 }
