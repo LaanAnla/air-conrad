@@ -274,7 +274,7 @@ p.green-text {
 
 .home__ps5 { /* Section with PS5 */
   @extend %column-center;
-  height: 100vh;
+  height: 100%;
   position: relative;
   width: 100vw;
 }

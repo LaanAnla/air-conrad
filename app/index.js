@@ -8,6 +8,7 @@ import NavigationLink from "./utils/NavigationLink";
 import Preloader from "./components/Preloader";
 import Split from "./animation/Banner";
 import ScrollIndex from "./utils/ScrollIndex";
+import Experience from "./classes/Experience";
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
@@ -22,10 +23,16 @@ class App {
       smooth: 2,               // how long (in seconds) it takes to "catch up" to the native scroll position
       smoothTouch: 0.1, 
       });
-      this.createPreloader();
       this.createContent();
+      this.createPreloader();
+      this.createCanvas();
       this.createPages();
     
+  }
+
+  createContent() {
+    this.content = document.querySelector('.content');
+    this.template = this.content.getAttribute('data-template');
   }
 
   createPreloader() {
@@ -33,9 +40,11 @@ class App {
     this.preloader.once('completed', this.onPreloaded.bind(this))
   }
 
-  createContent() {
-    this.content = document.querySelector('.content');
-    this.template = this.content.getAttribute('data-template');
+  createCanvas() {
+    this.experience = new Experience({
+      canvas: this.canvas,
+      template: this.template
+    })
   }
   
   createPages() {
