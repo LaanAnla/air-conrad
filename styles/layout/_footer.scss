@@ -7,7 +7,7 @@
 
   @include media('<tablet') {
     height: 40vh;
-    justify-content: space-around;
+    justify-content: space-between;
   }
 
   @media screen and (max-width: 900px) and (orientation: landscape) {
