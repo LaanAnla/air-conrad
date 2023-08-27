@@ -17,11 +17,11 @@ class App {
 
     this.scrollSmoother = ScrollSmoother.create({
       effects: true,           // looks for data-speed and data-lag attributes on elements
-      ignoreMobileResize: true,
+      // ignoreMobileResize: true,
       normalizeScroll: true, 
-      preventDefault: true,
+      // preventDefault: true,
       smooth: 2,               // how long (in seconds) it takes to "catch up" to the native scroll position
-      smoothTouch: 0.1, 
+      smoothTouch: true, 
       });
       this.createContent();
       this.createPreloader();
