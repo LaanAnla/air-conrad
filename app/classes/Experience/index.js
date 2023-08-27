@@ -6,6 +6,8 @@ import Renderer from "./Renderer"
 import Sizes from "./Utils/Sizes"
 import Time from "./Utils/Time"
 import { Scene } from "three"
+import Stats from 'stats.js'
+
 
 let instance = null
 
@@ -36,6 +38,13 @@ export default class Experience {
       this.update()
     })
     this.createWebgl()
+    this.createStats()
+  }
+
+  createStats() {
+    this.stats = new Stats()
+    this.stats.showPanel(0) // 0: fps, 1: ms, 2: mb, 3+: custom
+    document.body.appendChild(this.stats.dom)
   }
 
   createWebgl() {
@@ -50,10 +59,12 @@ export default class Experience {
   }
 
   update() {
+    this.stats.begin()
     this.canvasBanner.update()
     this.canvasWebgl.update()
     this.camera.update()
     this.renderer.update()
+    this.stats.end()
   }
 
 }
