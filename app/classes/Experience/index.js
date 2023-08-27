@@ -49,11 +49,11 @@ export default class Experience {
 
   createWebgl() {
     this.canvasBanner = new CanvasBanner()
-    this.canvasWebgl = new CanvasWebgl()
+    //this.canvasWebgl = new CanvasWebgl()
   }
 
   resize() {
-    this.canvasWebgl.resize()
+    //this.canvasWebgl.resize()
     this.camera.resize()
     this.renderer.resize()
   }
@@ -61,7 +61,7 @@ export default class Experience {
   update() {
     this.stats.begin()
     this.canvasBanner.update()
-    this.canvasWebgl.update()
+    //this.canvasWebgl.update()
     this.camera.update()
     this.renderer.update()
     this.stats.end()
