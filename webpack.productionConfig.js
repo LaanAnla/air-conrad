@@ -2,7 +2,7 @@ const webpack = require('webpack');
 const path = require('path')
 const { merge } = require('webpack-merge')
 // const TerserPlugin = require("terser-webpack-plugin");
-const CompressionPlugin = require("compression-webpack-plugin");
+//const CompressionPlugin = require("compression-webpack-plugin");
 
 const config = require('./webpack.config');
 
@@ -17,6 +17,6 @@ module.exports = merge(config, {
   //   minimizer: [new TerserPlugin()]
   // },
   plugins: [
-    new CompressionPlugin(),
+    //new CompressionPlugin(),
   ],
 })
