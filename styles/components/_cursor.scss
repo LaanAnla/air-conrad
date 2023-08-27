@@ -1,0 +1,18 @@
+.cursor {
+  background-image: url('images/logo-athom-cursor-white.svg');
+  border: 1px solid white;
+  border-radius: 50%;
+  height: 40px;
+  left: 0;
+  mix-blend-mode: difference;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  visibility: hidden;
+  width: 40px;
+  z-index: z('cursor');
+
+  @include media('<tablet') {
+    display: none;
+  }
+}

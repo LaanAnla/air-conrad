@@ -1,10 +1,20 @@
-html {
-  color: inherit
-}
+@import './base/reset';
 
-.example {
-  display: grid;
-  transition: all .5s;
-  user-select: none;
-  background: linear-gradient(to bottom, white, black);
-}
+@import './utils/variables';
+@import './utils/functions';
+@import './utils/mixins';
+@import './utils/responsive';
+
+@import './base/base.scss';
+@import './base/typography';
+
+@import './components/preloader';
+@import './components/cursor';
+@import './components/noise';
+@import './layout/progress';
+@import './layout/pixel';
+@import './layout/header';
+@import './layout/navigation';
+@import './layout/footer';
+
+@import './pages/home';

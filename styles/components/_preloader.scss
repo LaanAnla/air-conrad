@@ -1,0 +1,60 @@
+.preloader {
+  @extend %cover;
+  @extend %column-center;
+  align-items: center;
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top:0;
+  z-index: z('preloader');
+}
+
+.preloader__wiper {
+	height:100vh;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100vw;
+  z-index: z('preloader');
+}
+
+.black {
+  background-color: $base-color-black;
+}
+
+.brown {
+  background-color: $base-color-brown;
+}
+
+.violet {
+  background-color: $base-color-purple;
+}
+
+.blue {
+  background-color: $base-color-blue;
+}
+
+.preloader__brands {
+  z-index: z('preloader');
+}
+
+.preloader__brands--figure {
+  height: auto;
+  width: 300px;
+  z-index: z('preloader');
+}
+
+.preloader__brands--image {
+  height: 100%;
+  width: 100%;
+}
+
+.preloader__number {
+  bottom: 20px;
+  position: absolute;
+  z-index: z('preloader');
+}
+
+.preloader__number--text {
+ @extend %p;
+}
