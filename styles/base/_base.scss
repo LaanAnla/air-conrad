@@ -33,7 +33,7 @@ body {
   z-index: z('canvas');
   position: relative;
 
-  @include media('<desktop') {
+  @include media('<tablet') {
     display: none;
   }
 }
