@@ -32,4 +32,8 @@ body {
   width: 100vw;
   z-index: z('canvas');
   position: relative;
+
+  @include media('<desktop') {
+    display: none;
+  }
 }

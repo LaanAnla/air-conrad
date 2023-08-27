@@ -297,6 +297,10 @@ p.green-text {
   height: 100%;
   width: 100vw;
   position: relative;
+
+  @include media('<tablet') {
+    height: 60vh;
+  }
 }
 
 .home__ps5__rules2 {
@@ -532,7 +536,8 @@ p.green-text {
 
 .home__ps5__wrapper {
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  //justify-content: center;
   align-items: center;
   flex-wrap: nowrap;
   width: 90vw;
@@ -553,6 +558,8 @@ p.green-text {
   height: auto;
 
   @include media('<tablet') {
+    position: relative;
+    opacity: 1;
     width: calc(90% - 10px); /* Réduit à 40% au lieu de 50% pour des images plus petites */
     height: auto;
   }

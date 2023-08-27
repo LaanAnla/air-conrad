@@ -19,6 +19,7 @@ export default class Experience {
     instance = this
 
     window.experience = this
+    this.body = document.querySelector('body')
 
     this.canvas = canvas
     this.template = template
@@ -49,19 +50,25 @@ export default class Experience {
 
   createWebgl() {
     this.canvasBanner = new CanvasBanner()
-    //this.canvasWebgl = new CanvasWebgl()
+    if(this.body.classList.contains("desktop")) {
+      this.canvasWebgl = new CanvasWebgl()
+    }
   }
 
   resize() {
-    //this.canvasWebgl.resize()
-    this.camera.resize()
+    if(this.body.classList.contains("desktop")) {
+      this.canvasWebgl.resize()
+    }
     this.renderer.resize()
+    this.camera.resize()
   }
 
   update() {
     this.stats.begin()
     this.canvasBanner.update()
-    //this.canvasWebgl.update()
+    if(this.body.classList.contains("desktop")) {
+      this.canvasWebgl.update()
+    }
     this.camera.update()
     this.renderer.update()
     this.stats.end()
