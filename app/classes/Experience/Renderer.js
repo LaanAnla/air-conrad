@@ -1,5 +1,5 @@
 import Experience from ".";
-import { WebGLRenderer } from "three";
+import { WebGLRenderer } from "three/src/renderers/WebGLRenderer.js"
 
 export default class Renderer {
   constructor() {
@@ -20,7 +20,7 @@ export default class Renderer {
   createRenderer() {
     this.instance = new WebGLRenderer({
       canvas: this.webglBanner,
-      antialias: true 
+      antialias: true
     });
     this.instance.setSize(this.sizes.width, this.sizes.height)
     this.instance.setPixelRatio(Math.min(window.devicePixelRatio, 2))
@@ -29,7 +29,8 @@ export default class Renderer {
   createRendererPS5() {
     this.instancePS5 = new WebGLRenderer({
       canvas: this.webglPS5,
-      antialias: true 
+      antialias: true,
+      alpha: true,
     });
     this.instancePS5.setSize(this.sizes.width, this.sizes.height)
     this.instancePS5.setPixelRatio(Math.min(window.devicePixelRatio, 2))
@@ -44,6 +45,6 @@ export default class Renderer {
 
   update() {
     this.instance.render(this.scene, this.camera.instance)
-    this.instancePS5.render(this.scenePS5, this.camera.instance)
+    this.instancePS5.render(this.scenePS5, this.camera.instancePS5)
   }
 }

@@ -22,7 +22,7 @@ export default class Preloader extends Component {
   }
 
   createLoader() {
-    this.elements.body.style.position = 'fixed' /* avoid scrolling during preloader */
+    //this.elements.body.style.position = 'fixed' /* avoid scrolling during preloader */
       each(this.elements.images, element => {
         
         element.onload = _ => {

@@ -32,6 +32,12 @@
   font-size: $font-size-h2;
 }
 
+%h3 {
+  color: $base-color-white;
+  font-family: $font-pixeloid-bold;
+  font-size: $font-size-h3;
+}
+
 %h4 {
   color: $base-color-white;
   font-family: $font-pixeloid-mono;

@@ -15,8 +15,8 @@ export default class Split {
   }
 
   createSplit() {
-    const body = document.querySelector('body')
-    body.style.position = 'fixed'
+    // const body = document.querySelector('body')
+    // body.style.position = 'fixed'
 
     const split = new SplitText(this.text, {charsClass:'chars', linesClass: 'lines'}) 
     const splitElement = document.querySelector(this.item)
@@ -37,8 +37,8 @@ export default class Split {
           tl.to(this.cursor, {
             autoAlpha: 1
           }, 0)
-          body.style.position = "relative",
-          ScrollTrigger.refresh()
+          // body.style.position = "relative",
+          // ScrollTrigger.refresh()
         }
       }, ">-80%")
     })

@@ -5,10 +5,14 @@ import conrad from '../../../../shared/images/air-conrad-banner.webp'
 import vertex from '../../../shaders/vertex.glsl'
 import fragment from '../../../shaders/fragment.glsl'
 import { gsap } from "gsap"
-import { DataTexture, NearestFilter, RGBAFormat, ShaderMaterial, FloatType, Vector4, TextureLoader, DoubleSide, PlaneGeometry, Mesh, Color } from "three";
-
-
-
+import { DataTexture } from "three/src/textures/DataTexture.js";
+import { ShaderMaterial } from "three/src/materials/ShaderMaterial.js";
+import { TextureLoader } from "three/src/loaders/TextureLoader.js";
+import { PlaneGeometry } from "three/src/geometries/PlaneGeometry.js";
+import { Mesh } from "three/src/objects/Mesh.js"
+import { Color } from "three/src/math/Color.js";
+import { Vector4 } from "three/src/math/Vector4.js";
+import { RGBAFormat, NearestFilter, FloatType } from "three/src/constants.js";
 
 export default class CanvasBanner {
   constructor() {
@@ -29,8 +33,6 @@ export default class CanvasBanner {
       vY: 0
     }
 
-
-    //this.createCube()
     this.createBanner()
     this.mouseEvents()
     this.resize()
@@ -97,7 +99,7 @@ export default class CanvasBanner {
       extensions: {
         derivatives: "#extension GL_OES_standard_derivatives : enable"
       },
-      side: DoubleSide,
+      //side: DoubleSide,
       uniforms: {
         time: {value: 0},
         resolution: {value: new Vector4()},

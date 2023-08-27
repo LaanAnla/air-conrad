@@ -10,7 +10,7 @@ export default class Cursor {
     gsap.set(".cursor", { xPercent: -50, yPercent: -50 });
 
     const cursorElement = document.querySelector(".cursor");
-    const allLinks = document.querySelectorAll('a');
+    const allLinks = document.querySelectorAll('a, iframe');
     
     let position = { 
       x: window.innerWidth / 2, 

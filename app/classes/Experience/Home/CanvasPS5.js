@@ -1,6 +1,6 @@
-import { BoxGeometry } from "three";
-import { MeshNormalMaterial } from "three";
-import { Mesh } from "three";
+import { BoxGeometry } from "three/src/geometries/BoxGeometry.js";
+import { MeshNormalMaterial } from "three/src/materials/MeshNormalMaterial.js";
+import { Mesh } from "three/src/objects/Mesh.js"
 import Experience from "..";
 
 
@@ -18,6 +18,7 @@ export default class CanvasPS5 {
   }
 
   createCube() {
+
     this.geometry = new BoxGeometry( 0.5, 0.5, 0.5 );
     this.material = new MeshNormalMaterial();
 

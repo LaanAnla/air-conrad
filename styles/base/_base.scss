@@ -28,7 +28,8 @@ body {
 
 #webglPS5 {
   display: block;
-  height: 100vh;
+  height: 100%;
   width: 100vw;
   z-index: z('canvas');
+  position: relative;
 }

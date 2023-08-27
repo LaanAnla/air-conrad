@@ -11,6 +11,7 @@ $font-pixeloid-sans: 'Pixeloid Sans';
 
 $font-size-h1: clamp(2em, 4vw, 6em);
 $font-size-h2: calc(25px + (50 - 25) * ((100vw - 320px) / (1920 - 320)));
+$font-size-h3: calc(25px + (30 - 25) * ((100vw - 320px) / (1920 - 320)));
 $font-size-h4: calc(15px + (20 - 15) * (100vw - 350px) / (1920 - 350));
 $font-size-main-title: calc(35px + 105*(100vw - 320px)/1600);
 $font-size-p: calc(15px + (25 - 15) * (100vw - 350px) / (1920 - 350));

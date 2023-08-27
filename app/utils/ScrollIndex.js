@@ -40,7 +40,7 @@ export default class ScrollIndex {
     sections.forEach(section => {
       ScrollTrigger.create({
         trigger: section,
-        start: "top top+=10",
+        start: "top top",
         end: "bottom top",
         onEnter: () => {
           const sectionColor = section.getAttribute('data-color');

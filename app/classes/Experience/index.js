@@ -1,6 +1,7 @@
 import Camera from "./Camera"
 import CanvasBanner from "./Home/CanvasBanner"
 import CanvasPS5 from "./Home/CanvasPS5"
+import CanvasWebgl from "./Home/CanvasWebgl"
 import Renderer from "./Renderer"
 import Sizes from "./Utils/Sizes"
 import Time from "./Utils/Time"
@@ -39,17 +40,18 @@ export default class Experience {
 
   createWebgl() {
     this.canvasBanner = new CanvasBanner()
-    this.canvasPS5 = new CanvasPS5()
+    this.canvasWebgl = new CanvasWebgl()
   }
 
   resize() {
+    this.canvasWebgl.resize()
     this.camera.resize()
     this.renderer.resize()
   }
 
   update() {
     this.canvasBanner.update()
-    this.canvasPS5.update()
+    this.canvasWebgl.update()
     this.camera.update()
     this.renderer.update()
   }

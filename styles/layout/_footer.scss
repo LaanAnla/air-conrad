@@ -53,6 +53,10 @@
   @extend %p;
 }
 
+.footer__notice a {
+  text-decoration: none;
+}
+
 .footer__mentions__wrapper {
   align-items: center;
   display: flex;

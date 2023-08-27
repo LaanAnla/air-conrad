@@ -286,10 +286,20 @@ p.green-text {
 }
 
 .home__ps5__title__introduction__wrapper {
-  visibility: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding-top: 60px;
 }
 
 .home__ps5__rules {
+  @extend %column-center;
+  height: 100%;
+  width: 100vw;
+  position: relative;
+}
+
+.home__ps5__rules2 {
   @extend %column-center;
   height: 100%;
   width: 100vw;
@@ -321,6 +331,10 @@ p.green-text {
 }
 
 .home__ps5__rules--item {
+  margin: auto;
+  text-align: center;
+  width: 90%;
+
   @include media('<tablet') {
     margin: auto;
     text-align: center;
@@ -340,6 +354,7 @@ p.green-text {
 
 .item--brown {
   animation: couleurChangeante 2s linear infinite;
+  text-transform: uppercase;
 }
 
 .video__teaser__wrapper {
@@ -514,3 +529,90 @@ p.green-text {
     margin-top: 50px;
   }
 }
+
+.home__ps5__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  width: 90vw;
+  height: auto;
+  position: relative;
+}
+
+.webgl-image-wrapper {
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: z('content');
+  // width: 900px;
+  // height: 600px;
+  width: 900px; /* Réduit à 40% au lieu de 50% pour des images plus petites */
+  height: auto;
+
+  @include media('<tablet') {
+    width: calc(90% - 10px); /* Réduit à 40% au lieu de 50% pour des images plus petites */
+    height: auto;
+  }
+}
+
+img.webgl-image {
+  width: 100%;
+  height: auto;
+}
+
+.marquee {
+  display: flex;
+  justify-content: flex-start;
+  overflow: hidden; /* Cachez le contenu débordant */
+  width: 100vw; /* Définissez la largeur selon vos besoins */
+  //background-color: #ff0000; /* Couleur d'arrière-plan pour mieux voir l'effet */
+  text-transform: uppercase;
+}
+
+.marquee-content, .marquee-like {
+  white-space: nowrap;
+  //display: inline-block;
+  animation: conrad 8s linear infinite; /* animation nom-d'animation | durée | type | boucle */
+}
+
+@keyframes conrad {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.marquee-content-social {
+  white-space: nowrap;
+  //display: inline-block;
+  animation: marquee 8s linear infinite; /* animation nom-d'animation | durée | type | boucle */
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+// .marquee-content-social {
+//   white-space: nowrap;
+//   display: inline-block;
+//   animation: marquee 10s linear infinite; /* animation nom-d'animation | durée | type | boucle */
+// }
+
+.marquee-content-social a {
+  text-decoration: none;
+}
+
+
+
+
+

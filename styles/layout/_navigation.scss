@@ -30,7 +30,7 @@
 }
 
 .navigation__text {
-  @extend %p;
+  @extend %h3;
   text-align: center;
   text-transform: uppercase;
 
