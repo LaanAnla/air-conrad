@@ -6,7 +6,7 @@
   width: 100%;
 
   @include media('<tablet') {
-    min-height: 40vh;
+    height: 40vh;
     justify-content: space-between;
   }
 
