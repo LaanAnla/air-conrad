@@ -47,6 +47,7 @@
     "gsap": "npm:@gsap/shockingly@^3.12.2",
     "include-media": "^2.0.0",
     "nodemon": "^3.0.1",
+    "postcss-100vh-fix": "^1.0.2",
     "pug": "^3.0.2",
     "stats.js": "^0.17.0",
     "three": "^0.155.0",
