@@ -27,7 +27,7 @@ export default class Animation extends Component {
   }
 
   animateIn() {
-    
+    ScrollTrigger.refresh()
   }
 
   animateOut() {
