@@ -62,7 +62,7 @@ export default class CanvasBanner {
   }
 
   createBanner() {
-    this.size = 10
+    this.size = 4
 
     let mm = gsap.matchMedia()
     mm.add("(min-width: 1100px)", () => {
