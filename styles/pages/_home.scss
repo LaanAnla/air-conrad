@@ -559,7 +559,7 @@ p.green-text {
   // width: 900px;
   // height: 600px;
   width: 900px; /* Réduit à 40% au lieu de 50% pour des images plus petites */
-  height: auto;
+  height: 506px;
 
   @include media('<tablet') {
     position: relative;
@@ -572,8 +572,8 @@ p.green-text {
 }
 
 img.webgl-image {
-  width: 100%;
-  height: auto;
+  width: 900px;
+  height: 506px;
 }
 
 .marquee {
@@ -588,7 +588,7 @@ img.webgl-image {
 .marquee-content, .marquee-like {
   white-space: nowrap;
   //display: inline-block;
-  animation: conrad 8s linear infinite; /* animation nom-d'animation | durée | type | boucle */
+  animation: conrad 20s linear infinite; /* animation nom-d'animation | durée | type | boucle */
 }
 
 @keyframes conrad {
@@ -603,7 +603,7 @@ img.webgl-image {
 .marquee-content-social {
   white-space: nowrap;
   //display: inline-block;
-  animation: marquee 8s linear infinite; /* animation nom-d'animation | durée | type | boucle */
+  animation: marquee 20s linear infinite; /* animation nom-d'animation | durée | type | boucle */
 }
 
 @keyframes marquee {

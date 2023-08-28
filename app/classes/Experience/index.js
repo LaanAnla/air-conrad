@@ -31,6 +31,9 @@ export default class Experience {
     this.camera = new Camera()
     this.renderer = new Renderer()
 
+    this.createWebgl()
+    this.createStats()
+
     this.sizes.on('resize', () => {
       this.resize()
     })
@@ -38,8 +41,6 @@ export default class Experience {
     this.time.on('tick', () => {
       this.update()
     })
-    this.createWebgl()
-    this.createStats()
   }
 
   createStats() {

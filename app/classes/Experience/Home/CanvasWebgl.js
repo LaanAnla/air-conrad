@@ -28,6 +28,8 @@ export default class CanvasWebgl {
     this.raycaster = new Raycaster();
     this.pointer = new Vector2();
 
+    this.materials = []
+
     this.image = document.querySelectorAll('.webgl-image')
 
     this.addImage()
@@ -51,19 +53,20 @@ export default class CanvasWebgl {
       fragmentShader: fragmentPS5
     })
 
-    this.materials = []
+
 
     this.imagesStore = map(this.image, img => {
   
+      
       let bounds = img.getBoundingClientRect()
       let geometry = new PlaneGeometry(1, 1, 100, 100)
-      let CLONED_IMAGE = img.cloneNode(true); // this helped when img set image width in JS
-      let texture = new Texture(CLONED_IMAGE);
+      let texture = new Texture(img);
       texture.needsUpdate = true
 
       let material = this.material.clone()
 
       material.uniforms.uTexture.value = texture
+      material.uniforms.uImage.value = texture
 
       this.materials.push(material)
 
@@ -96,7 +99,7 @@ export default class CanvasWebgl {
       })
 
 
-      material.uniforms.uImage.value = texture
+      // material.uniforms.uImage.value = texture
 
       let mesh = new Mesh(geometry, material)
       mesh.scale.set(bounds.width, bounds.height, 1)
