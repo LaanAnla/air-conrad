@@ -13,7 +13,7 @@ export default class Preloader extends Component {
         logo: document.querySelectorAll(".preloader__brands, .preloader__number"),
         wiper: document.querySelectorAll('.preloader__wiper'),
         number: ".preloader__number--text",
-        images: document.querySelectorAll("img.preloaded, iframe"),
+        images: document.querySelectorAll("img.preloaded"),
         body: document.querySelector('body'),
       }
     });

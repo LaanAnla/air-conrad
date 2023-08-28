@@ -241,15 +241,14 @@ block content
                 figure
                   img.preloaded(data-src="images/logo-athom.webp" alt="Athletes on the mat logo")
       section.video__teaser__wrapper(data-client="" data-animation="title")
-        if isDesktop
-          iframe(
-            data-src="https://www.youtube.com/embed/E7ei5RIgyzI?si=1QMJ4OhqyMdEjZMe",
-            title="YouTube video player",
-            frameborder="0",
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share",
-            allowfullscreen,
-            loading="lazy"
-          )
+        iframe(
+          src="https://www.youtube.com/embed/E7ei5RIgyzI?si=1QMJ4OhqyMdEjZMe",
+          title="YouTube video player",
+          frameborder="0",
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share",
+          allowfullscreen,
+          loading="lazy"
+        )
       section.home__end(data-client="")
         figure.home__end__title__image
           img.preloaded(data-src="images/logo-flashback-2.webp" alt="logo of Microids and Athletes on the mat" data-animation="photoZoom")
