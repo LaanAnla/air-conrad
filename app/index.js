@@ -55,7 +55,6 @@ class App {
 
     this.page = this.pages[this.template];
     this.page.create();
-    ScrollTrigger.refresh()
     this.page.show();
     this.createCursor();
     this.createNavigationLink();
@@ -63,6 +62,7 @@ class App {
     this.createGrid();
     this.createJump();
     this.createPining()
+    ScrollTrigger.refresh()
   }
 
   createPining() {
