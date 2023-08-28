@@ -371,10 +371,9 @@ p.green-text {
   -webkit-overflow-scrolling: touch;
 
   @include media('<desktop') {
-    // height: calc(9/16 * 100vw); // Note: Changed to 100vw here to maintain 16:9 ratio based on width.
-    // width: 95%; 
-    // margin-bottom: 30px;
-    display: none;
+    height: calc(9/16 * 100vw); // Note: Changed to 100vw here to maintain 16:9 ratio based on width.
+    width: 95%; 
+    margin-bottom: 30px;
   }
 }
 

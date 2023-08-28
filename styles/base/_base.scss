@@ -6,6 +6,14 @@ html {
   min-height: 100vh;
   overflow-x: hidden; 
   padding: 0;
+  height: -webkit-fill-available;
+}
+
+@supports (-webkit-touch-callout: none) {
+  body {
+    /* The hack for Safari */
+    min-height: -webkit-fill-available;
+  }
 }
 
 body {
