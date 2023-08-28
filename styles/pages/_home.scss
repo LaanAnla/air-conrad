@@ -364,9 +364,11 @@ p.green-text {
 .video__teaser__wrapper {
   height: 90vh; /* 90% of the viewport height */
   margin: 0 auto; /* center the wrapper if needed */
-  overflow: hidden;
+  //overflow: hidden;
   position: relative;
   width: calc(16/9 * 90vh); /* based on 16:9 ratio */
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
 
   @include media('<desktop') {
     height: calc(9/16 * 100vw); // Note: Changed to 100vw here to maintain 16:9 ratio based on width.
