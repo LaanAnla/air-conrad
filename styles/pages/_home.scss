@@ -311,7 +311,7 @@ p.green-text {
 }
 
 .home__ps5__rules__introduction--wrapper {
-  color: inherit
+  margin-top: 40px;
 }
 
 .home__ps5__rules__introduction--title {
@@ -574,6 +574,11 @@ p.green-text {
 img.webgl-image {
   width: 900px;
   height: 506px;
+
+  @include media('<tablet') {
+    width: 100%;
+    height: auto;
+  }
 }
 
 .marquee {
@@ -583,6 +588,39 @@ img.webgl-image {
   width: 100vw; /* Définissez la largeur selon vos besoins */
   //background-color: #ff0000; /* Couleur d'arrière-plan pour mieux voir l'effet */
   text-transform: uppercase;
+
+  @include media('<tablet') {
+    display: none;
+  }
+}
+
+.marquee__mobile {
+  display: none;
+
+  @include media('<tablet') {
+    height: 100%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 99vw;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.marqueeMobile {
+  font-size: 20px;
+  @extend %p;
+  padding: 5px;
+  text-align: center;
+  margin: auto;
+}
+
+.marquee__mobile a {
+  text-decoration: none;
+  color: $base-color-purple;
 }
 
 .marquee-content, .marquee-like {
