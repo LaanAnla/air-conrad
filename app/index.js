@@ -21,7 +21,7 @@ class App {
       smooth: 2,               // how long (in seconds) it takes to "catch up" to the native scroll position
       smoothTouch: true,
       ignoreMobileResize: true,
-      normalizeScroll: true,
+      normalizeScroll: false,
       });
       this.createContent();
       this.createPreloader();
@@ -31,7 +31,6 @@ class App {
   }
 
   createContent() {
-    ScrollTrigger.refresh()
     this.content = document.querySelector('.content');
     this.template = this.content.getAttribute('data-template');
   }
