@@ -16,8 +16,6 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 class App {
   constructor() {
 
-    ScrollTrigger.normalizeScroll(true)
-
     this.scrollSmoother = ScrollSmoother.create({
       effects: true,           // looks for data-speed and data-lag attributes on elements
       smooth: 2,               // how long (in seconds) it takes to "catch up" to the native scroll position

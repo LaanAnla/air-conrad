@@ -71,6 +71,5 @@ export default class Preloader extends Component {
 
   destroy() {
     this.element.parentNode.removeChild(this.element);
-    ScrollTrigger.refresh(); /* refresh scrolltrigger after doinf position:fixed on preloader */
   }
 }
