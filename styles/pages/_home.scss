@@ -127,9 +127,7 @@ h2.preorder {
   margin-bottom: 20px;
 
   @include media('<tablet') {
-    // width: calc(85% - 10px); /* Réduit à 40% au lieu de 50% pour des images plus petites */
-    width: 300px;
-    height: 300px;
+    width: calc(85% - 10px); /* Réduit à 40% au lieu de 50% pour des images plus petites */
   }
 }
 
@@ -137,11 +135,6 @@ h2.preorder {
   width: 100%;
   height: 100%;
   margin-bottom: 20px;
-
-  @include media('<tablet') {
-    width: 300px;
-    height: 300px;
-  }
 }
 
 .home__collection__image-container p {

@@ -36,7 +36,7 @@ export default class Page {
         }
       }
     });
-    //this.createAnimations()
+    this.createAnimations()
   }
 
   createAnimations() {
