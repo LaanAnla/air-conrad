@@ -359,8 +359,12 @@ p.green-text {
 }
 
 .item--brown {
-  animation: couleurChangeante 2s linear infinite;
-  text-transform: uppercase;
+  display: none;
+
+  @include media('<tablet') {
+    animation: couleurChangeante 2s linear infinite;
+    text-transform: uppercase;
+  }
 }
 
 .video__teaser__wrapper {
@@ -585,19 +589,6 @@ img.webgl-image {
   }
 }
 
-.marquee {
-  display: flex;
-  justify-content: flex-start;
-  overflow: hidden; /* Cachez le contenu débordant */
-  width: 100vw; /* Définissez la largeur selon vos besoins */
-  //background-color: #ff0000; /* Couleur d'arrière-plan pour mieux voir l'effet */
-  text-transform: uppercase;
-
-  @include media('<tablet') {
-    display: none;
-  }
-}
-
 .marquee__mobile {
   display: none;
 
@@ -665,6 +656,113 @@ img.webgl-image {
 
 .marquee-content-social a {
   text-decoration: none;
+}
+
+////PS5 Rules steps
+.marquee {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100vw; /* Définissez la largeur selon vos besoins */
+  text-transform: uppercase;
+
+  @include media('<tablet') {
+    display: none;
+  }
+}
+
+.home__ps5__rules__step {
+  width: 100vw;
+  margin: auto;
+}
+
+.home__ps5__rules__title h2 {
+  color: #ffffff;
+  @extend %h2;
+  padding: 50px 0 50px 0;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: calc(25px + (50 - 25) * ((100vw - 320px) / (1920 - 320)));
+
+  @include media('<phone') {
+    width: 80vw;
+    //font-size: 20px;
+  }
+}
+
+.home__ps5__rules__title {
+  width: 100vw;
+  margin: auto;
+}
+
+.step__one {
+  //border-bottom:2px solid #777;
+	padding:1vw;
+	//background:#151515;
+	display:flex;
+	align-items:center;
+
+  @include media('<phone') {
+    //border-bottom:2px solid #777;
+    padding: 0 15px 0 15px;
+  }
+}
+
+.step__lines {
+  width:20px;
+	height:70px;
+	overflow:hidden;
+	background:#222222;
+  margin-left: 30px;
+  margin-right: 30px;
+
+  @include media('<phone') {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
+.step__line {
+  width:100%;
+	height:50px;
+	//background:#ff7b3e; /* orange */
+  padding: 0 10px 0 10px;
+
+}
+
+.step__number {
+  font-size: 25px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+}
+
+.step__text__link {
+  color:rgb(156, 20, 106);
+  text-decoration: none;
+}
+
+.step__text__link:hover {
+  color: green;
+}
+
+.step__text p,
+.step__number p {
+  @extend %h3;
+  color: #ffffff;
+  padding-bottom: 0px;
+}
+
+.step__text {
+  height: 100px;
+  //background-color: aqua;
+  display: flex;
+  align-items: center;
+
+  @include media('<phone') {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 

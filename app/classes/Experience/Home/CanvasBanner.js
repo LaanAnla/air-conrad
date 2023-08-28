@@ -13,6 +13,7 @@ import { Mesh } from "three/src/objects/Mesh.js"
 import { Color } from "three/src/math/Color.js";
 import { Vector4 } from "three/src/math/Vector4.js";
 import { RGBAFormat, NearestFilter, FloatType } from "three/src/constants.js";
+import { DoubleSide } from "three/src/constants.js";
 
 export default class CanvasBanner {
   constructor() {
@@ -54,7 +55,6 @@ export default class CanvasBanner {
       this.mouse.vX = this.mouse.x - this.mouse.prevX;
       this.mouse.vY = this.mouse.y - this.mouse.prevY;
 
-
       this.mouse.prevX = this.mouse.x
       this.mouse.prevY = this.mouse.y;
 
@@ -62,7 +62,7 @@ export default class CanvasBanner {
   }
 
   createBanner() {
-    this.size = 10
+    this.size = 20
 
     let mm = gsap.matchMedia()
     mm.add("(min-width: 1100px)", () => {
@@ -99,7 +99,7 @@ export default class CanvasBanner {
       extensions: {
         derivatives: "#extension GL_OES_standard_derivatives : enable"
       },
-      //side: DoubleSide,
+      side: DoubleSide,
       uniforms: {
         time: {value: 0},
         resolution: {value: new Vector4()},

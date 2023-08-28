@@ -1,13 +1,10 @@
 import Camera from "./Camera"
 import CanvasBanner from "./Home/CanvasBanner"
-import CanvasPS5 from "./Home/CanvasPS5"
 import CanvasWebgl from "./Home/CanvasWebgl"
 import Renderer from "./Renderer"
 import Sizes from "./Utils/Sizes"
 import Time from "./Utils/Time"
-import { Scene } from "three"
-//import Stats from 'stats.js'
-
+import { Scene } from "three/src/scenes/Scene.js"
 
 let instance = null
 
@@ -32,7 +29,6 @@ export default class Experience {
     this.renderer = new Renderer()
 
     this.createWebgl()
-    //this.createStats()
 
     this.sizes.on('resize', () => {
       this.resize()
@@ -65,14 +61,12 @@ export default class Experience {
   }
 
   update() {
-    //this.stats.begin()
     this.canvasBanner.update()
     if(this.body.classList.contains("desktop")) {
       this.canvasWebgl.update()
     }
     this.camera.update()
     this.renderer.update()
-    //this.stats.end()
   }
 
 }

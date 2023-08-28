@@ -1,18 +1,18 @@
-import { PlaneGeometry } from "three/src/geometries/PlaneGeometry.js";
 import Experience from "..";
-import { Mesh } from "three/src/objects/Mesh.js";
 import map from "lodash/map"
 import each from "lodash/each"
+import { PlaneGeometry } from "three/src/geometries/PlaneGeometry.js";
+import { Mesh } from "three/src/objects/Mesh.js";
 import { Texture } from "three/src/textures/Texture.js";
-import { ShaderMaterial } from "three";
+import { ShaderMaterial } from "three/src/materials/ShaderMaterial.js";
 import { Vector2 } from "three/src/math/Vector2.js";
+import { TextureLoader } from "three/src/loaders/TextureLoader.js";
+import { gsap } from "gsap"
+import { Raycaster } from "three/src/core/Raycaster.js";
+import { DoubleSide } from "three/src/constants.js";
 import vertexPS5 from "../../../shaders/vertex-ps5.glsl"
 import fragmentPS5 from "../../../shaders/fragment-ps5.glsl"
 import ps5 from '../../../../shared/images/play-station.webp'
-import { TextureLoader } from "three";
-import { gsap } from "gsap"
-import { Raycaster } from "three/src/core/Raycaster.js";
-import { DoubleSide } from "three";
 
 export default class CanvasWebgl {
   constructor() {
@@ -53,8 +53,6 @@ export default class CanvasWebgl {
       fragmentShader: fragmentPS5
     })
 
-
-
     this.imagesStore = map(this.image, img => {
   
       
@@ -65,8 +63,8 @@ export default class CanvasWebgl {
 
       let material = this.material.clone()
 
-      material.uniforms.uTexture.value = texture
       material.uniforms.uImage.value = texture
+      material.uniforms.uTexture.value = texture
 
       this.materials.push(material)
 
@@ -97,9 +95,6 @@ export default class CanvasWebgl {
           })
         })
       })
-
-
-      // material.uniforms.uImage.value = texture
 
       let mesh = new Mesh(geometry, material)
       mesh.scale.set(bounds.width, bounds.height, 1)
@@ -148,10 +143,9 @@ export default class CanvasWebgl {
     })
   }
 
-
   update() {
     this.materials.forEach( m => {
-      m.uniforms.uTime.value = this.time.elapsed / 2000
+      m.uniforms.uTime.value = this.time.elapsed / 1000
     })
   }
 }
