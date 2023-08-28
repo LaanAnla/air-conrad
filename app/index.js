@@ -9,6 +9,7 @@ import Preloader from "./components/Preloader";
 import Split from "./animation/Banner";
 import ScrollIndex from "./utils/ScrollIndex";
 import Experience from "./classes/Experience";
+import Pining from "./animation/Pining";
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
@@ -61,6 +62,11 @@ class App {
     this.createPixels();
     this.createGrid();
     this.createJump();
+    this.createPining()
+  }
+
+  createPining() {
+    this.genesisPining = new Pining()
   }
 
   createCursor() {

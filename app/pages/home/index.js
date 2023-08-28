@@ -12,7 +12,7 @@ export default class Home extends Page {
     });
 
     this.create();
-    this.createPining()
+    //this.createPining()
   }
 
   create() {
