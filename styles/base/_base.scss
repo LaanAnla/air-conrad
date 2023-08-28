@@ -17,6 +17,7 @@ body {
   overflow-x: hidden; 
   padding: 0;
   position: relative;
+  overscroll-behavior: none;
 }
 
 #webglBanner {
