@@ -16,7 +16,7 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 class App {
   constructor() {
 
-    ScrollTrigger.normalizeScroll(true)
+    //ScrollTrigger.normalizeScroll(true)
 
     this.scrollSmoother = ScrollSmoother.create({
       effects: true,           // looks for data-speed and data-lag attributes on elements
