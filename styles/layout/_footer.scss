@@ -6,7 +6,7 @@
   width: 100%;
 
   @include media('<tablet') {
-    height: auto;
+    min-height: 100%;
     justify-content: space-between;
   }
 
@@ -17,11 +17,12 @@
 
 .footer__wrapper {
   @extend %row-center;
-  gap: 20px;
-  justify-content: flex-start;
-  margin-left: 2.5rem;
-  padding: 15px 0 0 15px;
-  width: 100%;
+  // gap: 20px;
+  // justify-content: flex-start;
+  // margin-left: 2.5rem;
+  // padding: 15px 0 0 15px;
+  // width: 100%;
+  
 
   @include media('<tablet') {
     align-items: center;
