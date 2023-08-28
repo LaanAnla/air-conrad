@@ -52,7 +52,7 @@ export default class GridAnimation {
         scrollTrigger: {
           trigger: ".grid-section",
           scrub: 1,
-          start: "top center",
+          start: "top center+=30%",
           end: "bottom+=500 bottom",
         },
         defaults: {
@@ -66,13 +66,13 @@ export default class GridAnimation {
           scale: 3
         }, "start")
         .from(".column-1 .grid-image", {
-          duration: 1,
+          duration: 0.5,
           autoAlpha: 0,
           xPercent: i => -((i + 1) * 40 + i * 100),
           yPercent: i => (i + 1) * 40 + i * 100,
         }, "start")
         .from(".column-3 .grid-image", {
-          duration: 1,
+          duration: 0.5,
           autoAlpha: 0,
           xPercent: i => (i + 1) * 40 + i * 100,
           yPercent: i => (i + 1) * 40 + i * 100
