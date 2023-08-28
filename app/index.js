@@ -20,6 +20,7 @@ class App {
       smooth: 2,               // how long (in seconds) it takes to "catch up" to the native scroll position
       smoothTouch: true,
       ignoreMobileResize: true,
+      normalizeScroll: true,
       });
       this.createContent();
       this.createPreloader();
