@@ -43,6 +43,7 @@ export default class Preloader extends Component {
         this.onLoaded();
       }, 1000);
     }
+    ScrollTrigger.refresh()
   }
 
   onLoaded() {
