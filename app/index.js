@@ -10,6 +10,9 @@ import Split from "./animation/Banner";
 import ScrollIndex from "./utils/ScrollIndex";
 import Experience from "./classes/Experience";
 import Pining from "./animation/Pining";
+import { inject } from '@vercel/analytics';
+ 
+inject();
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
