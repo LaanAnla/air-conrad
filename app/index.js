@@ -12,8 +12,6 @@ import Experience from "./classes/Experience";
 import Pining from "./animation/Pining";
 import { inject } from '@vercel/analytics';
  
-inject();
-
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 class App {
@@ -30,6 +28,7 @@ class App {
       this.createPreloader();
       this.createCanvas();
       this.createPages();
+      inject();
     
   }
 
