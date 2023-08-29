@@ -1,8 +1,6 @@
 .home__banner {
-  //height: 100vh;
   height: 100%;
   position: relative;
-  //width: 100vw;
   width: 100%;
   @extend %row-center;
 }
@@ -68,7 +66,6 @@
 
 .home__collection {
   @extend %column-center;
-  //background-color: $base-color-black;
   min-height: 100vh;
   position: relative;
   width: 100vw;
@@ -94,7 +91,6 @@
   @extend %column-center;
   height: 30vh;
   width: 100vw;
-  // visibility: hidden;
 }
 
 .home__collection__introduction h2 {
@@ -102,7 +98,6 @@
   text-transform: uppercase;
 
   @include media('<tablet') {
-    // font-size: 20px;
     text-align: center;
   }
 }
@@ -370,7 +365,6 @@ p.green-text {
 .video__teaser__wrapper {
   height: 90vh; /* 90% of the viewport height */
   margin: 0 auto; /* center the wrapper if needed */
-  //overflow: hidden;
   position: relative;
   width: calc(16/9 * 90vh); /* based on 16:9 ratio */
   overflow: scroll;
@@ -564,8 +558,6 @@ p.green-text {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: z('content');
-  // width: 900px;
-  // height: 600px;
   width: 900px; /* Réduit à 40% au lieu de 50% pour des images plus petites */
   height: 506px;
 
