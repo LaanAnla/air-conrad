@@ -1,0 +1,20 @@
+/*!******************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./styles/index.scss ***!
+  \******************************************************************************************************************************************************/
+html {
+  color: inherit;
+}
+
+.example {
+  display: grid;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background: -webkit-gradient(linear, left top, left bottom, from(white), to(black));
+  background: linear-gradient(to bottom, white, black);
+}
+
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibWFpbi5jc3MiLCJtYXBwaW5ncyI6Ijs7O0FBQUE7RUFDRTtBQUNGOztBQUVBO0VBQ0U7RUFDQTtFQUFBO0VBQ0E7S0FBQTtNQUFBO1VBQUE7RUFDQTtFQUFBO0FBQ0YsQyIsInNvdXJjZXMiOlsid2VicGFjazovL3dlYnNpdGUtYWlyLWNvbnJhZC8uL3N0eWxlcy9pbmRleC5zY3NzIl0sInNvdXJjZXNDb250ZW50IjpbImh0bWwge1xuICBjb2xvcjogaW5oZXJpdFxufVxuXG4uZXhhbXBsZSB7XG4gIGRpc3BsYXk6IGdyaWQ7XG4gIHRyYW5zaXRpb246IGFsbCAuNXM7XG4gIHVzZXItc2VsZWN0OiBub25lO1xuICBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQodG8gYm90dG9tLCB3aGl0ZSwgYmxhY2spO1xufSJdLCJuYW1lcyI6W10sInNvdXJjZVJvb3QiOiIifQ==*/
